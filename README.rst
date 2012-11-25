@@ -58,7 +58,7 @@ Mode 2: Absolute Limits on Component Range
 
 This method is meant for identifying a specific set of values for a particular
 timing behavior within some range of allowable values. The exact components will
-be procurred or constructed later.::
+be procurred or constructed later.
 
 .. code-block:: python
 
@@ -69,7 +69,7 @@ be procurred or constructed later.::
 
 optimize_free also takes a set of optional parameters `R_range` and `C_range`, which define
 the minimum and maximum values for resistors and capacitors. For example to explicitly define
-a resistor value range between 100 Ohms and 1 MOhm::
+a resistor value range between 100 Ohms and 1 MOhm.
 
 .. code-block:: python
 
