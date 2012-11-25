@@ -31,19 +31,23 @@ Mode 1: Set Pool of Available Components
 This method is meant for selecting from a set of available components to
 best fit/achieve a particular timing behavior.
 
-from optimize_555.opt import optimize
-target_high = 42 #42 seconds
-target_low = 15 #15 seconds
-R1,R2,C,time_high,time_low = optimize(target_high, target_low)
+.. code-block:: python
+
+  from optimize_555.opt import optimize
+  target_high = 42 #42 seconds
+  target_low = 15 #15 seconds
+  R1,R2,C,time_high,time_low = optimize(target_high, target_low)
 
 `optimize` also accepts explicitly defined sets of resistors and capacitors through
-parameters called `R_set` and `C_set`.::
+parameters called `R_set` and `C_set`.
 
-from optimize_555.opt import optimize_free
-target_high = 42 #42 seconds
-target_low = 15 #15 seconds
-R_set = [100, 1e3, 10e3, 1e6]
-R1,R2,C,time_high,time_low = optimize_free(target_high, target_low, R_set=R_set)
+.. code-block:: python
+
+  from optimize_555.opt import optimize_free
+  target_high = 42 #42 seconds
+  target_low = 15 #15 seconds
+  R_set = [100, 1e3, 10e3, 1e6]
+  R1,R2,C,time_high,time_low = optimize_free(target_high, target_low, R_set=R_set)
 
 The above example defines 4 possible resistors values. The `R_set` and `C_set` lists
 should be ordered for proper optimization.
@@ -56,17 +60,21 @@ This method is meant for identifying a specific set of values for a particular
 timing behavior within some range of allowable values. The exact components will
 be procurred or constructed later.::
 
-from optimize_555.opt import optimize_free
-target_high = 42 #42 seconds
-target_low = 15 #15 seconds
-R1,R2,C,time_high,time_low = optimize_free(target_high, target_low)
+.. code-block:: python
+
+  from optimize_555.opt import optimize_free
+  target_high = 42 #42 seconds
+  target_low = 15 #15 seconds
+  R1,R2,C,time_high,time_low = optimize_free(target_high, target_low)
 
 optimize_free also takes a set of optional parameters `R_range` and `C_range`, which define
 the minimum and maximum values for resistors and capacitors. For example to explicitly define
 a resistor value range between 100 Ohms and 1 MOhm::
 
-R_range = (100, 1e6)
-R1,R2,C,time_high,time_low = optimize_free(target_high, target_low, R_range, C_range)
+.. code-block:: python
+
+  R_range = (100, 1e6)
+  R1,R2,C,time_high,time_low = optimize_free(target_high, target_low, R_range, C_range)
 
 
 DISCLAIMER
